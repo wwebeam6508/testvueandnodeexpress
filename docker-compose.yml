@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  web:
+    build: por-frontend/.
+    ports:
+     - "8080:80"
+    volumes:
+     - .:/web
+     - '/web/node_modules'
+  api:
+    build: por-backend/.
+    ports:
+     - "3000:3000"
+    volumes:
+     - .:/api
